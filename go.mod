@@ -13,7 +13,7 @@ require (
 	github.com/IBM/go-sdk-core/v5 v5.18.3
 	github.com/IBM/networking-go-sdk v0.49.0
 	github.com/Yamashou/gqlgenc v0.30.2
-	github.com/akamai/AkamaiOPEN-edgegrid-golang v1.2.2
+	github.com/akamai/AkamaiOPEN-edgegrid-golang/v9 v9.1.0
 	github.com/alecthomas/kingpin/v2 v2.4.0
 	github.com/aliyun/alibaba-cloud-sdk-go v1.63.75
 	github.com/aws/aws-sdk-go-v2 v1.32.7
