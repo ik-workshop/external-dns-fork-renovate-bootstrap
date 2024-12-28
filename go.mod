@@ -46,7 +46,7 @@ require (
 	github.com/miekg/dns v1.1.62
 	github.com/onsi/ginkgo v1.16.5
 	github.com/openshift/api v0.0.0-20230607130528-611114dca681
-	github.com/openshift/client-go v0.0.0-20230607134213-3cd0021bbee3
+	github.com/openshift/client-go 35abaf51555b
 	github.com/oracle/oci-go-sdk/v65 v65.81.1
 	github.com/ovh/go-ovh v1.6.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible
