@@ -27,7 +27,7 @@ require (
 	github.com/bodgit/tsig v1.2.2
 	github.com/cenkalti/backoff/v4 v4.3.0
 	github.com/civo/civogo v0.3.89
-	github.com/cloudflare/cloudflare-go v0.112.0
+	github.com/cloudflare/cloudflare-go/v3 v3.1.0
 	github.com/cloudfoundry-community/go-cfclient v0.0.0-20190201205600-f136f9222381
 	github.com/datawire/ambassador v1.12.4
 	github.com/denverdino/aliyungo v0.0.0-20230411124812-ab98a9173ace
