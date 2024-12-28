@@ -70,7 +70,7 @@ require (
 	golang.org/x/time v0.8.0
 	google.golang.org/api v0.214.0
 	gopkg.in/ns1/ns1-go.v2 v2.13.0
-	gopkg.in/yaml.v2 v2.4.0
+	gopkg.in/yaml.v3 v3.0.1
 	istio.io/api v1.24.2
 	istio.io/client-go v1.24.2
 	k8s.io/api v0.32.0
