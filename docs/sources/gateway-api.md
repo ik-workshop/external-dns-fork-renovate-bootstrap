@@ -52,7 +52,7 @@ rules:
   resources: ["namespaces"]
   verbs: ["get","watch","list"]
 - apiGroups: ["gateway.networking.k8s.io"]
-  resources: ["gateways","httproutes","grpcroutes","tlsroutes","tcproutes","udproutes"] 
+  resources: ["gateways","httproutes","grpcroutes","tlsroutes","tcproutes","udproutes"]
   verbs: ["get","watch","list"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -87,7 +87,7 @@ spec:
       serviceAccountName: external-dns
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         # Add desired Gateway API Route sources.
         - --source=gateway-httproute

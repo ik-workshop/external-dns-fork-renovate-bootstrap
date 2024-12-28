@@ -37,7 +37,7 @@ Then apply one of the following manifests file to deploy ExternalDNS.
 Create a values.yaml file to configure ExternalDNS to use DigitalOcean as the DNS provider. This file should include the necessary environment variables:
 
 ```shell
-provider: 
+provider:
   name: digitalocean
 env:
   - name: DO_TOKEN
@@ -68,7 +68,7 @@ spec:
     spec:
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         - --source=service # ingress is also possible
         - --domain-filter=example.com # (optional) limit to only example.com domains; change to match the zone created above.
@@ -97,7 +97,7 @@ rules:
   resources: ["services","endpoints","pods"]
   verbs: ["get","watch","list"]
 - apiGroups: ["extensions","networking.k8s.io"]
-  resources: ["ingresses"] 
+  resources: ["ingresses"]
   verbs: ["get","watch","list"]
 - apiGroups: [""]
   resources: ["nodes"]
@@ -135,7 +135,7 @@ spec:
       serviceAccountName: external-dns
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         - --source=service # ingress is also possible
         - --domain-filter=example.com # (optional) limit to only example.com domains; change to match the zone created above.
@@ -227,6 +227,6 @@ $ kubectl delete service -f externaldns.yaml
 
 If you have a large number of domains and/or records within a domain, you may encounter API
 rate limiting because of the number of API calls that external-dns must make to the DigitalOcean API to retrieve
-the current DNS configuration during every reconciliation loop. If this is the case, use the 
+the current DNS configuration during every reconciliation loop. If this is the case, use the
 `--digitalocean-api-page-size` option to increase the size of the pages used when querying the DigitalOcean API.
 (Note: external-dns uses a default of 50.)

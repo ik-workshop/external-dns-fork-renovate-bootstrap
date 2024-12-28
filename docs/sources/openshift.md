@@ -67,7 +67,7 @@ spec:
     spec:
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         - --source=openshift-route
         - --domain-filter=external-dns-test.my-org.com # will make ExternalDNS see only the hosted zones matching provided domain, omit to process all available hosted zones
@@ -94,7 +94,7 @@ rules:
   resources: ["services","endpoints","pods"]
   verbs: ["get","watch","list"]
 - apiGroups: ["extensions","networking.k8s.io"]
-  resources: ["ingresses"] 
+  resources: ["ingresses"]
   verbs: ["get","watch","list"]
 - apiGroups: [""]
   resources: ["nodes"]
@@ -134,7 +134,7 @@ spec:
       serviceAccountName: external-dns
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         - --source=openshift-route
         - --domain-filter=external-dns-test.my-org.com # will make ExternalDNS see only the hosted zones matching provided domain, omit to process all available hosted zones
@@ -146,7 +146,7 @@ spec:
 ```
 
 ### Verify External DNS works (OpenShift Route example)
-The following instructions are based on the 
+The following instructions are based on the
 [Hello Openshift](https://github.com/openshift/origin/tree/HEAD/examples/hello-openshift).
 
 #### Install a sample service and expose it

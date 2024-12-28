@@ -11,7 +11,7 @@ __NOTE:__ Your Pi-hole must be running [version 5.9 or newer](https://pi-hole.ne
 
 You can skip to the [manifest](#externaldns-manifest) if authentication is disabled on your Pi-hole instance or you don't want to use secrets.
 
-If your Pi-hole server's admin dashboard is protected by a password, you'll likely want to create a secret first containing its value. 
+If your Pi-hole server's admin dashboard is protected by a password, you'll likely want to create a secret first containing its value.
 This is optional since you _do_ retain the option to pass it as a flag with `--pihole-password`.
 
 You can create the secret with:
@@ -25,7 +25,7 @@ Replacing **"supersecret"** with the actual password to your Pi-hole server.
 
 ### ExternalDNS Manifest
 
-Apply the following manifest to deploy ExternalDNS, editing values for your environment accordingly. 
+Apply the following manifest to deploy ExternalDNS, editing values for your environment accordingly.
 Be sure to change the namespace in the `ClusterRoleBinding` if you are using a namespace other than **default**.
 
 ```yaml
@@ -81,7 +81,7 @@ spec:
       serviceAccountName: external-dns
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         # If authentication is disabled and/or you didn't create
         # a secret, you can remove this block.
         envFrom:

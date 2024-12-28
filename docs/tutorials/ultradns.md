@@ -44,9 +44,9 @@ spec:
     spec:
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
-        - --source=service 
+        - --source=service
         - --source=ingress # ingress is also possible
         - --domain-filter=example.com # (Recommended) We recommend to use this filter as it minimize the time to propagate changes, as there are less number of zones to look into..
         - --provider=ultradns
@@ -116,9 +116,9 @@ spec:
       serviceAccountName: external-dns
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
-        - --source=service 
+        - --source=service
         - --source=ingress
         - --domain-filter=example.com #(Recommended) We recommend to use this filter as it minimize the time to propagate changes, as there are less number of zones to look into..
         - --provider=ultradns
@@ -209,7 +209,7 @@ $ kubectl delete service -f externaldns.yaml
 ```
 ## Examples to Manage your Records
 ### Creating Multiple A Records Target
-- First, you want to create a service file called 'apple-banana-echo.yaml' 
+- First, you want to create a service file called 'apple-banana-echo.yaml'
 ```yaml
 ---
 kind: Pod
@@ -631,6 +631,6 @@ $ kubectl create -f external-dns.yaml
 - Depending on where you run your service from, it can take a few minutes for your cloud provider to create an external IP for the service.
 - Please verify on the [UltraDNS UI](https://portal.ultradns.com/login), that the records have been created under the zone "example.com".
 - Finally, you will need to clean up the deployment and service. Please verify on the UI afterwards that the records have been deleted from the zone "example.com":
-```console 
+```console
 $ kubectl delete -f apple-banana-echo.yaml
 $ kubectl delete -f external-dns.yaml```

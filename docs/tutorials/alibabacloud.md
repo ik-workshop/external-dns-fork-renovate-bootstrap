@@ -72,7 +72,7 @@ When running on Alibaba Cloud, you need to make sure that your nodes (on which E
 ## Set up a Alibaba Cloud DNS service or Private Zone service
 
 Alibaba Cloud DNS Service is the domain name resolution and management service for public access. It routes access from end-users to the designated web app.
-Alibaba Cloud Private Zone is the domain name resolution and management service for VPC internal access. 
+Alibaba Cloud Private Zone is the domain name resolution and management service for VPC internal access.
 
 *If you prefer to try-out ExternalDNS in one of the existing domain or zone you can skip this step*
 
@@ -113,7 +113,7 @@ spec:
     spec:
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         - --source=service
         - --source=ingress
@@ -150,7 +150,7 @@ rules:
   resources: ["services","endpoints","pods"]
   verbs: ["get","watch","list"]
 - apiGroups: ["extensions","networking.k8s.io"]
-  resources: ["ingresses"] 
+  resources: ["ingresses"]
   verbs: ["get","watch","list"]
 - apiGroups: [""]
   resources: ["nodes"]
@@ -187,7 +187,7 @@ spec:
       serviceAccountName: external-dns
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         - --source=service
         - --source=ingress
@@ -197,7 +197,7 @@ spec:
         - --alibaba-cloud-zone-type=public # only look at public hosted zones (valid values are public, private or no value for both)
         - --registry=txt
         - --txt-owner-id=my-identifier
-        - --alibaba-cloud-config-file= # enable sts token 
+        - --alibaba-cloud-config-file= # enable sts token
         volumeMounts:
         - mountPath: /usr/share/zoneinfo
           name: hostpath
@@ -326,7 +326,7 @@ $ aliyun alidns DescribeDomainRecords --DomainName=external-dns-test.com
         "Locked": false,
         "Line": "default",
         "TTL": 600
-      }      
+      }
     ]
   }
 }

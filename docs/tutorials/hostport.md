@@ -31,13 +31,13 @@ spec:
     spec:
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         - --log-level=debug
         - --source=service
         - --source=ingress
         - --namespace=dev
-        - --domain-filter=example.org. 
+        - --domain-filter=example.org.
         - --provider=aws
         - --registry=txt
         - --txt-owner-id=dev.example.org
@@ -59,7 +59,7 @@ rules:
   resources: ["services","endpoints","pods"]
   verbs: ["get","watch","list"]
 - apiGroups: ["extensions","networking.k8s.io"]
-  resources: ["ingresses"] 
+  resources: ["ingresses"]
   verbs: ["get","watch","list"]
 - apiGroups: [""]
   resources: ["nodes"]
@@ -96,13 +96,13 @@ spec:
       serviceAccountName: external-dns
       containers:
       - name: external-dns
-        image: registry.k8s.io/external-dns/external-dns:v0.15.1
+        image: registry.k8s.io/external-dns/external-dns:v0.15.0
         args:
         - --log-level=debug
         - --source=service
         - --source=ingress
         - --namespace=dev
-        - --domain-filter=example.org. 
+        - --domain-filter=example.org.
         - --provider=aws
         - --registry=txt
         - --txt-owner-id=dev.example.org
@@ -127,7 +127,7 @@ spec:
         component: kafka
     spec:
       containers:
-      - name:  kafka        
+      - name:  kafka
         image: confluent/kafka
         ports:
         - containerPort: 9092
@@ -162,7 +162,7 @@ Very important here, is to set the `hostPort`(only works if the PodSecurityPolic
 Now we need to define a headless service to use to expose the Kafka pods. There are generally two approaches to use expose the nodeport of a Headless service:
 
 1. Add `--fqdn-template={{name}}.example.org`
-2. Use a full annotation 
+2. Use a full annotation
 
 If you go with #1, you just need to define the headless service, here is an example of the case #2:
 
