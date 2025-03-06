@@ -1,4 +1,4 @@
-name: bump-version-with-renovate
+name: update-versions-with-renovate
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
     - cron: '0 4 * * *'
 
 jobs:
-  bump-version-with-renovate:
+  update-versions-with-renovate:
     runs-on: ubuntu-latest
     # if: github.repository == 'ivankatliarchuk/.github'
     steps:

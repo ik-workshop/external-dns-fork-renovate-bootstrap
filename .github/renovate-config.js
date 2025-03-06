@@ -12,7 +12,7 @@ module.exports = {
 		// "kubernetes-sigs/external-dns",
 		"ik-workshop/external-dns-fork-renovate-bootstrap"
 	],
-	"printConfig": true,
+	"printConfig": false,
 	"prConcurrentLimit": 0,
 	"prHourlyLimit": 0,
 	"stabilityDays": 3,
