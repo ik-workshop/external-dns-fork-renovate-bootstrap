@@ -2,12 +2,6 @@
 // https://github.com/renovatebot/github-action/blob/main/.github/renovate.json
 // https://docs.renovatebot.com/configuration-options/
 
-const fs = require('fs');
-const dry_run = process.env.RENOVATE_DRY_RUN
-console.log(`DRY_RUN mode: ${dry_run}`);
-
-// console.log(process.env)
-
 module.exports = {
 	"extends": [":disableRateLimiting", ":semanticCommits"],
 	"assigneesFromCodeOwners": true,
