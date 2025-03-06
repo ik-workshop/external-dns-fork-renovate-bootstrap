@@ -3,13 +3,6 @@ name: update-versions-with-renovate
 on:
   push:
     branches: [main, master]
-  workflow_dispatch:
-    inputs:
-      dryrun:
-        description: Perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.
-        required: true
-        type: boolean
-        default: true
   schedule:
     # https://crontab.guru/
     - cron: '0 4 * * *'
