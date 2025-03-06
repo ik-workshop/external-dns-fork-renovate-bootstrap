@@ -33,7 +33,6 @@ module.exports = {
 	"pre-commit": {
 		"enabled": true
 	},
-	"additionalBranchPrefix": "{{packageFileDir}}-",
 	"labels": ["{{depType}}", "datasource::{{datasource}}", "type::{{updateType}}", "manager::{{manager}}"], // can be overridden per packageRule
 	"addLabels": ["renovate-bot"], // cannot be overridden, any packageRule config extends this
 	"packageRules": [
