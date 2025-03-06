@@ -37,7 +37,7 @@ module.exports = {
 		},
 	],
 	"enabledManagers": [ // supported managers https://docs.renovatebot.com/modules/manager/
-		"regex",
+		"custom.regex",
 		"pre-commit"
 	],
 	"customManagers": [ // https://docs.renovatebot.com/modules/manager/regex/
