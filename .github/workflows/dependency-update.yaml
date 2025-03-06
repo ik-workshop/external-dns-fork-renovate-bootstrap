@@ -15,7 +15,7 @@ on:
     - cron: '0 4 * * *'
 
 jobs:
-  renovate:
+  bump-version-with-renovate:
     runs-on: ubuntu-latest
     # if: github.repository == 'ivankatliarchuk/.github'
     steps:
@@ -23,8 +23,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4.2.2
       # https://github.com/renovatebot/github-action
-      - name: self-hosted Renovate
-        uses: renovatebot/github-action@v41.0.13
+      - name: self-hosted renovate
+        uses: renovatebot/github-action@v41.0.14
         with:
           # docker-cmd-file: .github/renovate-entrypoint.sh
           # docker-user: root
